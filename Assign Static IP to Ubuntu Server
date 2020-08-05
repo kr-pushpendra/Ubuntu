@@ -1,0 +1,15 @@
+IP configutartion file will be at /etc/netplan/ location.
+The file will be named as 00-installer-config.yaml or 50-installer-config.yaml 
+It will have pre-defined IP address configuration with dhcp4: true.
+
+Make the changes as per your requirements and the final file must look like this:
+
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses: [192.168.137.5/24]
+      gateway4: 192.168.137.1
+      nameservers:
+        addresses: [8.8.4.4, 8.8.8.8]
